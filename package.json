@@ -1,6 +1,11 @@
 {
   "name": "serverless-template",
   "private": true,
+  "scripts": {
+    "lint": "eslint",
+    "lint:errors": "eslint --quiet",
+    "lint:ci": "eslint . --quiet"
+  },
   "workspaces": [
     "services/*"
   ],
