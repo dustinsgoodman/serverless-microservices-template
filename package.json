@@ -6,6 +6,11 @@
     "lint:errors": "eslint --quiet",
     "lint:ci": "eslint . --quiet"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "workspaces": [
     "services/*"
   ],
