@@ -3,7 +3,9 @@ const webpack = require('webpack');
 const slsw = require('serverless-webpack');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const aliases = require('./aliases');
 
+const servicePath = slsw.lib.serverless && slsw.lib.serverless.config && slsw.lib.serverless.config.servicePath || '';
 const isLocal = slsw.lib.webpack.isLocal;
 
 // configurable settings
@@ -12,7 +14,6 @@ const ENABLE_SOURCE_MAPS = true;
 const ENABLE_CACHING = isLocal;
 
 function entries() {
-  const servicePath = slsw.lib.serverless.config.servicePath;
   const entries = slsw.lib.entries;
   for (let key in entries) {
     entries[key] = path.join(servicePath, entries[key]);
@@ -129,9 +130,7 @@ module.exports = {
     // Performance
     symlinks: false,
     // import aliases
-    alias: {
-      // Utils: path.resolve(__dirname, 'src/utils'),
-    },
+    alias: aliases,
     // We don't package services individually so only look
     // inside the project's node_modules
     modules: ['node_modules']

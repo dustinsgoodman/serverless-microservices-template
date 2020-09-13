@@ -19,6 +19,7 @@
     "services/graphql-api/schema/**/*",
     "*.config.js",
     "*.setup.js",
+    "aliases.js",
     "console.js"
   ],
   "globals": {
@@ -51,5 +52,8 @@
     "no-console": "off",
     "no-underscore-dangle": "warn",
     "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
 }
