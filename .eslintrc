@@ -17,8 +17,9 @@
   ],
   "ignorePatterns": [
     "services/graphql-api/schema/**/*",
+    "jest.*.js",
     "*.config.js",
-    "*.setup.js",
+    "aliases.js",
     "console.js"
   ],
   "globals": {
@@ -51,5 +52,8 @@
     "no-console": "off",
     "no-underscore-dangle": "warn",
     "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
 }
