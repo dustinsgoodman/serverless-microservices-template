@@ -1,55 +1,55 @@
 {
-    "env": {
-      "browser": false,
-      "es6": true,
-      "jest": true,
-      "jest/globals": true,
-      "node": true
+  "env": {
+    "browser": false,
+    "es6": true,
+    "jest": true,
+    "jest/globals": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "@serverless/eslint-config/node"
+  ],
+  "ignorePatterns": [
+    "services/graphql-api/schema/**/*",
+    "*.config.js",
+    "*.setup.js",
+    "console.js"
+  ],
+  "globals": {
+    "sleep": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "classes": true,
+      "impliedStrict": true
     },
-    "extends": [
-      "airbnb-base",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "plugin:jest/recommended",
-      "plugin:prettier/recommended",
-      "prettier",
-      "@serverless/eslint-config/node"
-    ],
-    "ignorePatterns": [
-      "services/graphql-api/schema/**/*",
-      "*.config.js",
-      "*.setup.js",
-      "console.js"
-    ],
-    "globals": {
-      "sleep": true
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "ecmaFeatures": {
-        "classes": true,
-        "impliedStrict": true
-      },
-      "sourceType": "module"
-    },
-    "plugins": [
-      "import",
-      "prettier"
-    ],
-    "rules": {
-      "camelcase": "warn",
-      "class-methods-use-this": "warn",
-      "import/no-extraneous-dependencies": ["error", {
-        "devDependencies": [
-          "**/*.test.js",
-          "**/test/**/*.js"
-        ]
-      }],
-      "import/prefer-default-export": "off",
-      "jest/consistent-test-it": ["error", { "fn": "test" }],
-      "no-console": "off",
-      "no-underscore-dangle": "warn",
-      "prettier/prettier": "error"
-    }
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "camelcase": "warn",
+    "class-methods-use-this": "warn",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/*.test.js",
+        "**/test/**/*.js"
+      ]
+    }],
+    "import/prefer-default-export": "off",
+    "jest/consistent-test-it": ["error", { "fn": "test" }],
+    "no-console": "off",
+    "no-underscore-dangle": "warn",
+    "prettier/prettier": "error"
   }
+}
