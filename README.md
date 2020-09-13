@@ -8,3 +8,9 @@ This is a [Serverless](serverless.com) backend application template for usage ac
 
 ## Setup
 TBD
+
+### Clone dotenv files
+```
+cp .env.development.example .env.development
+cp .env.test.example .env.test
+```
