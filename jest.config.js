@@ -1,7 +1,5 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
-const babelJest = require('babel-jest');
-
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -13,7 +11,7 @@ module.exports = {
   // cacheDirectory: "/tmp/jest_rs",
 
   // Automatically clear mock calls and instances between every test
-  clearMocks: true,
+  clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -183,23 +181,7 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.js$': babelJest.createTransformer({
-      presets: ['@babel/preset-env'],
-      plugins: [
-        '@babel/plugin-proposal-class-properties',
-        [
-          'module-resolver',
-          {
-            root: ['./'],
-            alias: {
-              // Utils: path.resolve(__dirname, 'src/utils'),
-            }
-          }
-        ]
-      ],
-      babelrc: false,
-      configFile: false,
-    }),
+    '^.+\\.js$': require.resolve('./babelJest.setup.js'),
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
