@@ -41,12 +41,15 @@
     "eslint-plugin-prettier": "^3.1.4",
     "hard-source-webpack-plugin": "^0.13.1",
     "husky": "^4.2.5",
+    "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
+    "nock": "^13.0.4",
     "prettier": "^2.1.1",
     "prettier-eslint": "^11.0.0",
     "serverless-dotenv-plugin": "^3.0.0",
     "serverless-offline": "^6.7.0",
     "serverless-webpack": "^5.3.4",
+    "timekeeper": "^2.2.0",
     "webpack": "^4.44.1",
     "webpack-node-externals": "^2.5.2"
   }
