@@ -1,4 +1,4 @@
-import { invert } from 'Utils/ObjectUtil';
+import { invert } from 'Utils/ObjectUtils';
 
 describe('.invert', () => {
   let subject;
