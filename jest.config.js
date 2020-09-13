@@ -62,10 +62,10 @@ module.exports = {
   // forceCoverageMatch: [],
 
   // A path to a module which exports an async function that is triggered once before all test suites
-  // globalSetup: undefined,
+  // globalSetup: './jest.setup.js',
 
   // A path to a module which exports an async function that is triggered once after all test suites
-  // globalTeardown: undefined,
+  // globalTeardown: './jest.teardown.js',
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
@@ -110,7 +110,7 @@ module.exports = {
   // reporters: undefined,
 
   // Automatically reset mock state between every test
-  // resetMocks: false,
+  resetMocks: false,
 
   // Reset the module registry before running each individual test
   // resetModules: false,
@@ -133,7 +133,9 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: [
+    '<rootDir>/jest.setup.js'
+  ],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
@@ -181,7 +183,7 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.js$': require.resolve('./babelJest.setup.js'),
+    '^.+\\.js$': require.resolve('./jest.babelSetup.js'),
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
