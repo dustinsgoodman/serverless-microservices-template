@@ -1,0 +1,46 @@
+custom:
+  profile: serverless-template # use your project aws prefix here
+  region: ${opt:region, self:provider.region}
+
+  dotenv:
+    path: ../../.env.development
+
+  ports:
+    graphql-api:
+      httpPort: 3000
+      lambdaPort: 3002
+
+  serverless-offline:
+    httpPort: ${self:custom.ports.${self:service}.httpPort}
+    lambdaPort: ${self:custom.ports.${self:service}.lambdaPort}
+    useChildProcesses: false
+    useWorkerThreads: true
+
+  stage_env:
+    dev: &dev
+      SLS_DEBUG: '*'
+      IS_OFFLINE: false
+      PROFILE: dev
+      REGION: ${self:custom.region}
+      SLS_STAGE: dev
+
+    local: &local
+      <<: *dev
+      IS_OFFLINE: true
+      SLS_STAGE: local
+
+  warmup:
+    enabled: false
+    events:
+      - schedule: 'rate(10 minutes)'
+    prewarm: true
+
+  webpack:
+    excludeFiles: ./**/*.test.js
+    includeModules:
+      forceExclude:
+        - aws-sdk
+      forceInclude: ~
+      packagePath: ../../package.json
+    packager: yarn
+    webpackConfig: ../../webpack.config.js
