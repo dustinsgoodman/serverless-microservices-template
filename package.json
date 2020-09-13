@@ -2,6 +2,7 @@
   "name": "serverless-template",
   "private": true,
   "scripts": {
+    "console": "babel-node console.js",
     "lint": "eslint",
     "lint:errors": "eslint --quiet",
     "lint:ci": "eslint . --quiet",
