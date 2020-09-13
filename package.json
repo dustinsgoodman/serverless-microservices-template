@@ -4,11 +4,11 @@
   "scripts": {
     "console": "babel-node console.js",
     "lint": "eslint",
-    "lint:errors": "eslint --quiet",
     "lint:ci": "eslint . --quiet",
+    "lint:errors": "eslint --quiet",
     "test": "jest -u --no-watchman",
-    "test-ci": "jest -u --no-watchman --runInBand --coverage",
-    "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "test:ci": "jest -u --no-watchman --runInBand --coverage",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
   "husky": {
     "hooks": {
