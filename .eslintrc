@@ -17,8 +17,7 @@
   ],
   "ignorePatterns": [
     "services/graphql-api/schema/**/*",
-    "*.config.js",
-    "*.setup.js",
+    "jest.*.js",
     "aliases.js",
     "console.js"
   ],
