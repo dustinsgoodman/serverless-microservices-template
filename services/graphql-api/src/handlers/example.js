@@ -1,9 +1,13 @@
-const example = async (event) => {
-  return {
-    code: 'OK',
-    message: event,
-    statusCode: 200,
-  };
-};
+import { invoke } from '../../../../src/utils/LambdaUtil';
 
-export default example;
+export const main = async (event) => {
+  const response = await invoke({
+    serviceName: 'user-api',
+    functionName: 'user',
+    payload: {},
+    context: {},
+  });
+
+  console.log(response);
+  return response;
+};

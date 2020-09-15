@@ -20,7 +20,9 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "aws-sdk": "^2.753.0",
     "serverless": "^2.0.0",
+    "serverless-offline": "6.7.0",
     "serverless-plugin-warmup": "^4.9.0",
     "serverless-s3-remover": "^0.6.0"
   },
@@ -54,7 +56,6 @@
     "prettier": "^2.1.1",
     "prettier-eslint": "^11.0.0",
     "serverless-dotenv-plugin": "^3.0.0",
-    "serverless-offline": "^6.7.0",
     "serverless-webpack": "^5.3.5",
     "timekeeper": "^2.2.0",
     "webpack": "^4.44.1",

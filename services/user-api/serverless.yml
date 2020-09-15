@@ -1,0 +1,41 @@
+service: user-api
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-s3-remover
+  - serverless-offline
+  - serverless-webpack
+# app and org for use with dashboard.serverless.com
+# omit if you're not usling serverless.com
+# app: serverless-template
+# org: plsharocko
+
+custom: ${file(../../serverless.common.yml):custom}
+
+package:
+  individually: true
+  exclude:
+    - ./**
+
+provider:
+  name: aws
+  stage: ${opt:stage, "local"}
+  region: ${opt:region, "us-east-1"}
+  runtime: nodejs12.x
+  profile: ${self:custom.profile}-${self:custom.stage_env.${self:provider.stage}.PROFILE, 'dev'}
+  environment: ${self:custom.stage_env.${self:provider.stage}}
+  tracing:
+    apiGateway: true
+    lambda: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: '*'
+
+functions:
+  user:
+    handler: src/handlers/user.main
+    events:
+      - http:
+          path: user
+          method: get

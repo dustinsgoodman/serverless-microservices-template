@@ -1,4 +1,9 @@
 service: graphql-api
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-s3-remover
+  - serverless-offline
+  - serverless-webpack
 # app and org for use with dashboard.serverless.com
 # omit if you're not usling serverless.com
 # app: serverless-template
@@ -29,8 +34,8 @@ provider:
 
 functions:
   example:
-    handler: src/handlers/example
+    handler: src/handlers/example.main
     events:
       - http:
-        path: example
-        method: get
+          path: example
+          method: get

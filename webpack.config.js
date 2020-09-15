@@ -14,6 +14,7 @@ const ENABLE_SOURCE_MAPS = true;
 const ENABLE_CACHING = isLocal;
 
 function entries() {
+  console.log(servicePath);
   const entries = slsw.lib.entries;
   for (let key in entries) {
     entries[key] = path.join(servicePath, entries[key]);
