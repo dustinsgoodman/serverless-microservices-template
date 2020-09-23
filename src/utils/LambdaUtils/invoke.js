@@ -1,4 +1,5 @@
 import { Lambda } from 'API/AWSApi';
+import { downcaseKeys } from 'Utils/ObjectUtils';
 
 const PORTS = {
   'graphql-api': 3002,
@@ -27,12 +28,7 @@ export const invoke = async ({
 
   // forcing all headers for case insensitivity
   if (combinedPayload.headers) {
-    const newHeaders = Object.keys(combinedPayload.headers).reduce((acc, headerKey) => {
-      acc[headerKey.toLowerCase()] = combinedPayload.headers[headerKey];
-      return acc;
-    }, {});
-
-    combinedPayload.headers = newHeaders;
+    combinedPayload.headers = downcaseKeys(combinedPayload.headers);
   }
 
   const combinedContext = {
