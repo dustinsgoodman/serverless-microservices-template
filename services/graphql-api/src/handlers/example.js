@@ -1,9 +1,7 @@
-const example = async (event) => {
+export const main = async (event) => {
   return {
     code: 'OK',
     message: event,
     statusCode: 200,
   };
 };
-
-export default example;

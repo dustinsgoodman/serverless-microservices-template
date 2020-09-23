@@ -34,8 +34,8 @@ provider:
 
 functions:
   example:
-    handler: src/handlers/example
+    handler: src/handlers/example.main
     events:
       - http:
-        path: example
-        method: get
+          path: example
+          method: get
