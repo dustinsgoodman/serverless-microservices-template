@@ -1,4 +1,4 @@
-import lambda from '../src/handlers/example';
+import { main as lambda } from '../src/handlers/example';
 
 describe('example', () => {
   let event;
