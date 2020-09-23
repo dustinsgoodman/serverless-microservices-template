@@ -1,17 +1,21 @@
 const path = require('path');
 const webpack = require('webpack');
 const slsw = require('serverless-webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const Visualizer = require('webpack-visualizer-plugin');
+const { StatsWriterPlugin } = require('webpack-stats-plugin');
 const aliases = require('./aliases');
 
+const ENABLE_DEBUGGING = false;
+const IS_LOCAL = ENABLE_DEBUGGING ? false : slsw.lib.webpack.isLocal;
 const servicePath = slsw.lib.serverless && slsw.lib.serverless.config && slsw.lib.serverless.config.servicePath || '';
-const isLocal = slsw.lib.webpack.isLocal;
 
 // configurable settings
-const ENABLE_STATS = true;
-const ENABLE_SOURCE_MAPS = true;
-const ENABLE_CACHING = isLocal;
+const ENABLE_STATS = ENABLE_DEBUGGING || IS_LOCAL; // only want stats locally
+const ENABLE_SOURCE_MAPS = !IS_LOCAL; // only want source maps in prod
+const ENABLE_CACHING = IS_LOCAL;
 
 function entries() {
   const entries = slsw.lib.entries;
@@ -45,7 +49,9 @@ function babelLoader() {
           {
             targets: {
               node: '12.18.2'
-            }
+            },
+            useBuiltIns: 'usage',
+            corejs: 3
           }
         ]
       ]
@@ -90,25 +96,47 @@ function plugins() {
   // Ignore all locale files of moment.js
   plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));
 
+  if (ENABLE_DEBUGGING) {
+    plugins.push(new Visualizer());
+    plugins.push(new StatsWriterPlugin({
+      filename: "stats.json",
+      stats: {
+        all: true
+      }
+    }));
+  }
+
+
   return plugins;
 }
 
 function optimization() {
-  if (isLocal) {
-    return {
-      concatenateModules: true,
-      splitChunks: false,
-      removeEmptyChunks: false,
-      removeAvailableModules: false
-    };
+  const optimizationConfig = {
+    concatenateModules: true,
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        cache: ENABLE_CACHING,
+        parallel: IS_LOCAL, // https://github.com/webpack-contrib/terser-webpack-plugin#parallel
+        terserOptions: {
+          mangle: false, // need to disable for graphql
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false
+      }),
+    ],
+    usedExports: true, // enables tree shaking
+  };
+
+  if (IS_LOCAL) {
+    optimizationConfig.removeEmptyChunks = false;
+    optimizationConfig.removeAvailableModules = false;
+    optimizationConfig.splitChunks = false;
   }
 
-  // Don't minimize in production
-  // Large builds can run out of memory
-  return {
-    concatenateModules: true,
-    minimize: false
-  };
+  return optimizationConfig;
 }
 
 module.exports = {
@@ -116,12 +144,12 @@ module.exports = {
   target: 'node',
   context: path.resolve(__dirname),
   // Verbose Logging
-  stats: ENABLE_STATS ? 'normal' : 'errors-only',
+  stats: ENABLE_STATS ? (ENABLE_DEBUGGING ? 'verbose' : 'normal') : 'errors-only',
   devtool: ENABLE_SOURCE_MAPS ? 'source-map' : false,
   // Exclude aws-sdk b/c it's a built-in on lambda and nodeExternals b/c
   // we're in a node runtime and not on the browser
   externals: ['aws-sdk', nodeExternals()],
-  mode: isLocal ? 'development' : 'production',
+  mode: IS_LOCAL ? 'development' : 'production',
   performance: {
     // Turn off size warnings for entry points
     hints: false
@@ -133,7 +161,7 @@ module.exports = {
     alias: aliases,
     // We don't package services individually so only look
     // inside the project's node_modules
-    modules: ['node_modules']
+    modules: ['node_modules'],
   },
   module: loaders(),
   // PERFORMANCE ONLY FOR DEVELOPMENT
