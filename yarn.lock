@@ -3429,6 +3429,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aws-sdk@npm:^2.758.0":
+  version: 2.758.0
+  resolution: "aws-sdk@npm:2.758.0"
+  dependencies:
+    buffer: 4.9.2
+    events: 1.1.1
+    ieee754: 1.1.13
+    jmespath: 0.15.0
+    querystring: 0.2.0
+    sax: 1.2.1
+    url: 0.10.3
+    uuid: 3.3.2
+    xml2js: 0.4.19
+  checksum: 8363444f3c504b2e1243c5bbbc42396b218bdb09b578e2c19a60f8c3f0a35a3efef750d78b711f8d21aea736d8cc7aa45c32e6054396c3b01a2c27d741655c04
+  languageName: node
+  linkType: hard
+
 "aws-sign2@npm:~0.7.0":
   version: 0.7.0
   resolution: "aws-sign2@npm:0.7.0"
@@ -12194,6 +12211,7 @@ fsevents@^1.2.7:
     "@babel/register": ^7.11.5
     "@babel/runtime": ^7.11.2
     "@serverless/eslint-config": ^3.0.0
+    aws-sdk: ^2.758.0
     babel-eslint: ^10.1.0
     babel-jest: ^26.3.0
     babel-loader: ^8.1.0
