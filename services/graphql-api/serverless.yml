@@ -3,6 +3,11 @@ service: graphql-api
 # omit if you're not usling serverless.com
 # app: serverless-template
 # org: plsharocko
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-s3-remover
+  - serverless-offline
+  - serverless-webpack
 
 custom: ${file(../../serverless.common.yml):custom}
 
