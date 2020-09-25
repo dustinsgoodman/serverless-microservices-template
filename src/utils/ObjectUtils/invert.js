@@ -4,11 +4,9 @@
  * @param {Object} obj
  * @returns {Object}
  */
-const invert = (obj) => {
+export const invert = (obj) => {
   return Object.entries(obj).reduce((acc, [key, value]) => {
     acc[value] = key;
     return acc;
   }, {});
 };
-
-export { invert };

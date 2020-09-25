@@ -21,9 +21,11 @@ const replServer = repl.start({
   prompt: 'app > ',
 });
 
-const utils = require('./src/utils');
-Object.keys(utils).forEach((utilname) => {
-  replServer.context[utilname] = utils[utilname];
+Object.values(aliases).forEach((modulePath) => {
+  const mod = require(modulePath);
+  Object.entries(mod).forEach(([modName, modValue]) => {
+    replServer.context[modName] = modValue;
+  });
 });
 
 replServer.setupHistory('./.node_repl_history', () => {});

@@ -26,3 +26,7 @@ jobs:
       run: yarn lint:ci
     - name: Run tests
       run: yarn test:ci
+      env:
+        IS_OFFLINE: true
+        SLS_STAGE: test
+        USE_LOCAL_DB: true
