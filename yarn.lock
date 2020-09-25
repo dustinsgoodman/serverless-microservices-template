@@ -11386,12 +11386,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.0.0, prettier@npm:^2.1.1":
+"prettier@npm:^2.0.0":
   version: 2.1.1
   resolution: "prettier@npm:2.1.1"
   bin:
     prettier: bin-prettier.js
   checksum: 420a807cda2d482388daa42379a7aaa1be629cb71f5792362a971a5ed1c6ff377d2e311818d24e9390a4a8a6eac3fda9ebe6975f2168efec893790c0497d8a93
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "prettier@npm:2.1.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: bedc24c568efbcfe45f255558900777e2fabb36bf28ed4c22d2456eb22dfb012d12e566a46472ea5b857a4e9f263e888f7e316527d00bb58188f1820b0b0031a
   languageName: node
   linkType: hard
 
@@ -12550,7 +12559,7 @@ fsevents@^1.2.7:
     jest: ^26.4.2
     lint-staged: ^10.3.0
     nock: ^13.0.4
-    prettier: ^2.1.1
+    prettier: ^2.1.2
     prettier-eslint: ^11.0.0
     serverless: ^2.0.0
     serverless-dotenv-plugin: ^3.0.0
