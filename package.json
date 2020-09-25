@@ -20,7 +20,10 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "apollo-server-lambda": "^2.18.1",
     "aws-sdk": "^2.758.0",
+    "graphql": "^15.3.0",
+    "lodash": "^4.17.20",
     "serverless": "^2.3.0",
     "serverless-plugin-warmup": "^4.9.0",
     "serverless-s3-remover": "^0.6.0"
@@ -34,6 +37,8 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
     "@serverless/eslint-config": "^3.0.0",
+    "apollo": "^2.31.0",
+    "apollo-server-testing": "^2.18.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
@@ -47,6 +52,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-prettier": "^3.1.4",
+    "graphql-schema-linter": "^1.0.1",
     "hard-source-webpack-plugin": "^0.13.1",
     "husky": "^4.3.0",
     "jest": "^26.4.2",

@@ -1,0 +1,27 @@
+{
+  "customRulePaths": [],
+  "rules": [
+    "deprecations-have-a-reason",
+    "descriptions-are-capitalized",
+    "enum-values-all-caps",
+    "enum-values-have-descriptions",
+    "enum-values-sorted-alphabetically",
+    "fields-are-camel-cased",
+    "fields-have-descriptions",
+    "input-object-fields-sorted-alphabetically",
+    "input-object-values-are-camel-cased",
+    "input-object-values-have-descriptions",
+    "type-fields-sorted-alphabetically",
+    "types-are-capitalized",
+    "types-have-descriptions",
+  ],
+  "ignore": {
+    "enum-values-have-descriptions": [],
+    "enum-values-sorted-alphabetically": [],
+    "fields-are-camel-cased": ["Query._", "Mutation._", "Subscription._"],
+    "types-have-descriptions": [],
+  },
+  "schemaPaths": [
+    "services/graphql-api/schema/schema.graphql"
+  ]
+}

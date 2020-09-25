@@ -33,9 +33,14 @@ provider:
       Resource: '*'
 
 functions:
-  example:
-    handler: src/handlers/example.main
+  graphql:
+    handler: src/handlers/graphql.graphqlHandler
     events:
       - http:
-          path: example
+          path: graphql
+          method: post
+          cors: true
+      - http:
+          path: graphql
           method: get
+          cors: true
