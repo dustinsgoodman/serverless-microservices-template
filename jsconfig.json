@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "API/*": ["src/api/*"],
+      "Helpers/*": ["src/helpers/*"],
       "Utils/*": ["src/utils/*"]
     }
   }
