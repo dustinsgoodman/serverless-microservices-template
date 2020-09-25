@@ -57,8 +57,6 @@ export const invoke = async ({
     endpoint: invokeUrl,
   });
 
-  return lambda
-    .invoke(params)
-    .promise()
-    .then(({ Payload }) => JSON.parse(Payload));
+  const { Payload } = await lambda.invoke(params).promise();
+  return JSON.parse(Payload);
 };
