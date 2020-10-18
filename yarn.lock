@@ -7280,14 +7280,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^24.0.2":
-  version: 24.0.2
-  resolution: "eslint-plugin-jest@npm:24.0.2"
+"eslint-plugin-jest@npm:^24.1.0":
+  version: 24.1.0
+  resolution: "eslint-plugin-jest@npm:24.1.0"
   dependencies:
     "@typescript-eslint/experimental-utils": ^4.0.1
   peerDependencies:
     eslint: ">=5"
-  checksum: 738cfac3d8b7b6d10f4b6a0b3cb2ea6dce2c14164012ca09b552df5bd4ff32b0d88d681b9a064a347df6dea80296de13097e1fab881d977472641f85f57ea387
+  checksum: 17aa55e6e51e54d170a8846f255e230a9ae17dedb4efa8ce948a4b0401889617d79f2d389e54af50c7bf2eb4e514f51ae3af754bd0f82bbde51378c4190d3b40
   languageName: node
   linkType: hard
 
@@ -14482,7 +14482,7 @@ fsevents@^1.2.7:
     eslint-config-prettier: ^6.13.0
     eslint-import-resolver-webpack: ^0.13.0
     eslint-plugin-import: ^2.22.1
-    eslint-plugin-jest: ^24.0.2
+    eslint-plugin-jest: ^24.1.0
     eslint-plugin-prettier: ^3.1.4
     graphql: ^15.3.0
     graphql-schema-linter: ^1.0.1
