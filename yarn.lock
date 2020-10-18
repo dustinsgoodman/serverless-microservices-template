@@ -7225,9 +7225,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-webpack@npm:^0.12.2":
-  version: 0.12.2
-  resolution: "eslint-import-resolver-webpack@npm:0.12.2"
+"eslint-import-resolver-webpack@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "eslint-import-resolver-webpack@npm:0.13.0"
   dependencies:
     array-find: ^1.0.0
     debug: ^2.6.9
@@ -7242,7 +7242,7 @@ __metadata:
   peerDependencies:
     eslint-plugin-import: ">=1.4.0"
     webpack: ">=1.11.0"
-  checksum: 5310d4383e443387b45e2ea2371b9e0725812b7cb996fa5be9f0e9c4e0716fa9fa1aebadd85def4067fced274e68479d23a4e4397e4277e5acb64793da6d30b6
+  checksum: a04f839a2f7de296a98b49ab69ef5aaca44804035383e24276070b5e86b5c745a9ea7c7a94f9d24426305c482138b153efede42da4cb9686a00d58ba04451178
   languageName: node
   linkType: hard
 
@@ -14479,7 +14479,7 @@ fsevents@^1.2.7:
     eslint: ^7.8.1
     eslint-config-airbnb-base: ^14.2.0
     eslint-config-prettier: ^6.13.0
-    eslint-import-resolver-webpack: ^0.12.2
+    eslint-import-resolver-webpack: ^0.13.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-jest: ^24.0.2
     eslint-plugin-prettier: ^3.1.4
