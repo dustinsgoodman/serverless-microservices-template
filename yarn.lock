@@ -3897,41 +3897,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-core@npm:^2.18.1":
-  version: 2.18.1
-  resolution: "apollo-server-core@npm:2.18.1"
-  dependencies:
-    "@apollographql/apollo-tools": ^0.4.3
-    "@apollographql/graphql-playground-html": 1.6.26
-    "@types/graphql-upload": ^8.0.0
-    "@types/ws": ^7.0.0
-    apollo-cache-control: ^0.11.3
-    apollo-datasource: ^0.7.2
-    apollo-graphql: ^0.6.0
-    apollo-reporting-protobuf: ^0.6.0
-    apollo-server-caching: ^0.5.2
-    apollo-server-env: ^2.4.5
-    apollo-server-errors: ^2.4.2
-    apollo-server-plugin-base: ^0.10.1
-    apollo-server-types: ^0.6.0
-    apollo-tracing: ^0.11.4
-    async-retry: ^1.2.1
-    fast-json-stable-stringify: ^2.0.0
-    graphql-extensions: ^0.12.5
-    graphql-tag: ^2.9.2
-    graphql-tools: ^4.0.0
-    graphql-upload: ^8.0.2
-    loglevel: ^1.6.7
-    sha.js: ^2.4.11
-    subscriptions-transport-ws: ^0.9.11
-    uuid: ^8.0.0
-    ws: ^6.0.0
-  peerDependencies:
-    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: 68b6565daed1182b06b2cf21e08506e9f5b6f0ef38b024d9262e61c65e2f24c101d2a27a7022491d35aa23985271c9ac6dda3a18a7d6ab57f054661009d46645
-  languageName: node
-  linkType: hard
-
 "apollo-server-core@npm:^2.18.2":
   version: 2.18.2
   resolution: "apollo-server-core@npm:2.18.2"
@@ -3987,19 +3952,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-lambda@npm:^2.18.1":
-  version: 2.18.1
-  resolution: "apollo-server-lambda@npm:2.18.1"
+"apollo-server-lambda@npm:^2.18.2":
+  version: 2.18.2
+  resolution: "apollo-server-lambda@npm:2.18.2"
   dependencies:
     "@apollographql/graphql-playground-html": 1.6.26
     "@types/aws-lambda": ^8.10.31
-    apollo-server-core: ^2.18.1
+    apollo-server-core: ^2.18.2
     apollo-server-env: ^2.4.5
     apollo-server-types: ^0.6.0
     graphql-tools: ^4.0.0
   peerDependencies:
     graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: 1bb7791f10c78cb6264a67847408611e70f6a1c93c16e2ff44d4081005cdfb6ead217f5c48d8f4da26a60e79e568892e568a54d955951cc4a8466767e3d29c5b
+  checksum: d62e298cc631453a4e1a7d405cbfd73cb864b2baf49d4486c9d0b3bbb00c32d43e9b91cc0da501a3380a38dbe73b5acfd2545ebccb987e590ed8b7486fc1b717
   languageName: node
   linkType: hard
 
@@ -14503,7 +14468,7 @@ fsevents@^1.2.7:
     "@babel/runtime": ^7.11.2
     "@serverless/eslint-config": ^3.0.0
     apollo: ^2.31.0
-    apollo-server-lambda: ^2.18.1
+    apollo-server-lambda: ^2.18.2
     apollo-server-testing: ^2.18.2
     aws-sdk: ^2.758.0
     babel-eslint: ^10.1.0
