@@ -3932,6 +3932,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"apollo-server-core@npm:^2.18.2":
+  version: 2.18.2
+  resolution: "apollo-server-core@npm:2.18.2"
+  dependencies:
+    "@apollographql/apollo-tools": ^0.4.3
+    "@apollographql/graphql-playground-html": 1.6.26
+    "@types/graphql-upload": ^8.0.0
+    "@types/ws": ^7.0.0
+    apollo-cache-control: ^0.11.3
+    apollo-datasource: ^0.7.2
+    apollo-graphql: ^0.6.0
+    apollo-reporting-protobuf: ^0.6.0
+    apollo-server-caching: ^0.5.2
+    apollo-server-env: ^2.4.5
+    apollo-server-errors: ^2.4.2
+    apollo-server-plugin-base: ^0.10.1
+    apollo-server-types: ^0.6.0
+    apollo-tracing: ^0.11.4
+    async-retry: ^1.2.1
+    fast-json-stable-stringify: ^2.0.0
+    graphql-extensions: ^0.12.5
+    graphql-tag: ^2.9.2
+    graphql-tools: ^4.0.0
+    graphql-upload: ^8.0.2
+    loglevel: ^1.6.7
+    lru-cache: ^5.0.0
+    sha.js: ^2.4.11
+    subscriptions-transport-ws: ^0.9.11
+    uuid: ^8.0.0
+    ws: ^6.0.0
+  peerDependencies:
+    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+  checksum: c4374b24ca46e8133533983fca7df5b6a3a324932d9b8dde46581138cb7947894b3f3d79c52da3e5224ccab931ab193e565ce460028a29ca8778b1339f28e7c7
+  languageName: node
+  linkType: hard
+
 "apollo-server-env@npm:^2.4.5":
   version: 2.4.5
   resolution: "apollo-server-env@npm:2.4.5"
@@ -3978,14 +4014,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-testing@npm:^2.18.1":
-  version: 2.18.1
-  resolution: "apollo-server-testing@npm:2.18.1"
+"apollo-server-testing@npm:^2.18.2":
+  version: 2.18.2
+  resolution: "apollo-server-testing@npm:2.18.2"
   dependencies:
-    apollo-server-core: ^2.18.1
+    apollo-server-core: ^2.18.2
   peerDependencies:
     graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: 814526d7c8dce1030318dd02fc9adcd64b4321205d40fc69f985b31b7539b54d097a3edcc43e8b2864082f7fcd60330f7e1964bc9593fb4ac302e26f63cf4c67
+  checksum: 8785148d75a0e0d2378ee514401c3dc83a6610679429231c01194cccc777bc50e8d01ea5b1600e999dfe767c9b56bb96a56e2c7d6ffea9da0178a63658a21d88
   languageName: node
   linkType: hard
 
@@ -14468,7 +14504,7 @@ fsevents@^1.2.7:
     "@serverless/eslint-config": ^3.0.0
     apollo: ^2.31.0
     apollo-server-lambda: ^2.18.1
-    apollo-server-testing: ^2.18.1
+    apollo-server-testing: ^2.18.2
     aws-sdk: ^2.758.0
     babel-eslint: ^10.1.0
     babel-jest: ^26.3.0
