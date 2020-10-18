@@ -19,7 +19,7 @@
     "services/*"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.12.1",
     "apollo-server-lambda": "^2.18.2",
     "aws-sdk": "^2.758.0",
     "graphql": "^15.3.0",
