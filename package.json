@@ -67,7 +67,7 @@
     "timekeeper": "^2.2.0",
     "webpack": "^4.44.2",
     "webpack-node-externals": "^2.5.2",
-    "webpack-stats-plugin": "^0.3.2",
+    "webpack-stats-plugin": "^1.0.1",
     "webpack-visualizer-plugin": "^0.1.11"
   }
 }
