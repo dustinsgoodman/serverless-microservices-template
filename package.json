@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "apollo-server-lambda": "^2.18.2",
+    "apollo-server-lambda": "^2.19.0",
     "aws-sdk": "^2.758.0",
     "graphql": "^15.4.0",
     "lodash": "^4.17.20",
@@ -38,7 +38,7 @@
     "@babel/register": "^7.12.1",
     "@serverless/eslint-config": "^3.0.0",
     "apollo": "^2.31.1",
-    "apollo-server-testing": "^2.18.2",
+    "apollo-server-testing": "^2.19.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.2",
     "babel-loader": "^8.1.0",
@@ -65,7 +65,7 @@
     "serverless-webpack": "^5.3.5",
     "terser-webpack-plugin": "^4.2.2",
     "timekeeper": "^2.2.0",
-    "webpack": "^4.44.2",
+    "webpack": "^5.4.0",
     "webpack-node-externals": "^2.5.2",
     "webpack-stats-plugin": "^1.0.2",
     "webpack-visualizer-plugin": "^0.1.11"
