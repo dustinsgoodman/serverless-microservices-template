@@ -6,8 +6,8 @@ service: graphql-api
 plugins:
   - serverless-dotenv-plugin
   - serverless-s3-remover
-  - serverless-offline
   - serverless-webpack
+  - serverless-offline
 
 custom: ${file(../../serverless.common.yml):custom}
 
