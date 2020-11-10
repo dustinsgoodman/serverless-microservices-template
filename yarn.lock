@@ -1410,7 +1410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:^7.10.5, @babel/register@npm:^7.11.5":
+"@babel/register@npm:^7.10.5":
   version: 7.11.5
   resolution: "@babel/register@npm:7.11.5"
   dependencies:
@@ -1422,6 +1422,21 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: b42f131f1c715bf4062817d93d4a82fdc8bafa390be3cd8c808207d5d351ebb182a1ff789e4832d6c6a09d68d33ea33a3ed4b32308dec972a3d6108e314d79c6
+  languageName: node
+  linkType: hard
+
+"@babel/register@npm:^7.12.1":
+  version: 7.12.1
+  resolution: "@babel/register@npm:7.12.1"
+  dependencies:
+    find-cache-dir: ^2.0.0
+    lodash: ^4.17.19
+    make-dir: ^2.1.0
+    pirates: ^4.0.0
+    source-map-support: ^0.5.16
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: e52b50e9018788826ff2193daca05eacd54bc0b4299674b68befc3d73ab7118d76070cf75240a4e1f362b393e68e7601fcb7bfc21ae20510d270e4bfcaf7ae34
   languageName: node
   linkType: hard
 
@@ -14680,7 +14695,7 @@ fsevents@^1.2.7:
     "@babel/plugin-proposal-private-methods": ^7.12.1
     "@babel/plugin-transform-runtime": ^7.11.5
     "@babel/preset-env": ^7.11.5
-    "@babel/register": ^7.11.5
+    "@babel/register": ^7.12.1
     "@babel/runtime": ^7.11.2
     "@serverless/eslint-config": ^3.0.0
     apollo: ^2.31.0
