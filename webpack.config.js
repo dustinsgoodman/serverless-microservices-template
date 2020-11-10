@@ -41,19 +41,8 @@ function babelLoader() {
       cacheDirectory: ENABLE_CACHING,
       // Disable compressing cache files to speed up caching
       cacheCompression: false,
-      plugins: plugins.map(require.resolve),
-      presets: [
-        [
-          require.resolve('@babel/preset-env'),
-          {
-            targets: {
-              node: '12.18.2'
-            },
-            useBuiltIns: 'usage',
-            corejs: 3
-          }
-        ]
-      ]
+      plugins: plugins,
+      presets: ['@babel/preset-env'],
     }
   };
 }
@@ -82,7 +71,12 @@ function plugins() {
   const plugins = [];
 
   // Ignore all locale files of moment.js
-  plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));
+  plugins.push(
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^\.\/locale$/,
+      contextRegExp: /moment$/,
+    })
+  );
 
   if (ENABLE_DEBUGGING) {
     // plugins.push(new Visualizer());
@@ -120,7 +114,6 @@ function optimization() {
   if (IS_LOCAL) {
     optimizationConfig.removeEmptyChunks = false;
     optimizationConfig.removeAvailableModules = false;
-    optimizationConfig.splitChunks = false;
   }
 
   return optimizationConfig;
