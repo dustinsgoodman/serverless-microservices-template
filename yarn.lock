@@ -14827,7 +14827,7 @@ fsevents@^1.2.7:
     timekeeper: ^2.2.0
     webpack: ^4.44.2
     webpack-node-externals: ^2.5.2
-    webpack-stats-plugin: ^0.3.2
+    webpack-stats-plugin: ^1.0.2
     webpack-visualizer-plugin: ^0.1.11
   languageName: unknown
   linkType: soft
@@ -16959,10 +16959,10 @@ typescript@^3.9.3:
   languageName: node
   linkType: hard
 
-"webpack-stats-plugin@npm:^0.3.2":
-  version: 0.3.2
-  resolution: "webpack-stats-plugin@npm:0.3.2"
-  checksum: 8fa6813dc4a949be06939c3689bd8f34a5f68ccf0e19492c19323772ed23f50ddf0377e5c1951650dc71b895e05f2db923c8c5a41610ae55be40899e467dc9e0
+"webpack-stats-plugin@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "webpack-stats-plugin@npm:1.0.2"
+  checksum: c5b31eff9ea3137af637543768519b0f63e767815acdab3a517df6afea813079021d62083eede677daf03b859a52f7505a793311c9e4fe1be901c06ad0224a39
   languageName: node
   linkType: hard
 
