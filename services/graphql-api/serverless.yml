@@ -23,6 +23,8 @@ provider:
   runtime: nodejs12.x
   profile: ${self:custom.profile}-${self:custom.stage_env.${self:provider.stage}.PROFILE, 'dev'}
   environment: ${self:custom.stage_env.${self:provider.stage}}
+  apiGateway:
+    shouldStartNameWithService: true
   tracing:
     apiGateway: true
     lambda: true
