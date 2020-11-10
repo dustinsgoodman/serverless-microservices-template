@@ -575,11 +575,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/node@npm:^7.10.5":
-  version: 7.10.5
-  resolution: "@babel/node@npm:7.10.5"
+"@babel/node@npm:^7.12.6":
+  version: 7.12.6
+  resolution: "@babel/node@npm:7.12.6"
   dependencies:
-    "@babel/register": ^7.10.5
+    "@babel/register": ^7.12.1
     commander: ^4.0.1
     core-js: ^3.2.1
     lodash: ^4.17.19
@@ -591,7 +591,7 @@ __metadata:
     "@babel/core": ^7.0.0-0
   bin:
     babel-node: ./bin/babel-node.js
-  checksum: e5dde4840343d693e319899c7f00884d8e436c7ec6e0712613f53e509092a95a96b0c2004d01ee599940850d04f9217826d1a948a1f40ddc0f5c3549df0e422d
+  checksum: dce05ca83077c74661063c0e5e4c11b07c54aa24faf019949843828251224711c0ebef876d091cdf19aea852f869476643d77e9ce0e01dc7df52b286cea106f2
   languageName: node
   linkType: hard
 
@@ -1453,21 +1453,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 8a463709fd9db195c73ad1d6ff2d85ce92976167f20ded23ec49b47754c42fae40f93ff3287fb2e980f0d7f0b7ddf163aa92faf416ef422bdccf722bdae50138
-  languageName: node
-  linkType: hard
-
-"@babel/register@npm:^7.10.5":
-  version: 7.11.5
-  resolution: "@babel/register@npm:7.11.5"
-  dependencies:
-    find-cache-dir: ^2.0.0
-    lodash: ^4.17.19
-    make-dir: ^2.1.0
-    pirates: ^4.0.0
-    source-map-support: ^0.5.16
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: b42f131f1c715bf4062817d93d4a82fdc8bafa390be3cd8c808207d5d351ebb182a1ff789e4832d6c6a09d68d33ea33a3ed4b32308dec972a3d6108e314d79c6
   languageName: node
   linkType: hard
 
@@ -14820,7 +14805,7 @@ fsevents@^1.2.7:
   resolution: "serverless-template@workspace:."
   dependencies:
     "@babel/core": ^7.12.3
-    "@babel/node": ^7.10.5
+    "@babel/node": ^7.12.6
     "@babel/plugin-proposal-class-properties": ^7.10.4
     "@babel/plugin-proposal-private-methods": ^7.12.1
     "@babel/plugin-transform-runtime": ^7.12.1
