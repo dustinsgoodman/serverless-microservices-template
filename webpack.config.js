@@ -2,9 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const slsw = require('serverless-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
-const Visualizer = require('webpack-visualizer-plugin');
+// const Visualizer = require('webpack-visualizer-plugin');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
 const aliases = require('./aliases');
 
@@ -82,22 +81,11 @@ function loaders() {
 function plugins() {
   const plugins = [];
 
-  if (ENABLE_CACHING) {
-    plugins.push(
-      new HardSourceWebpackPlugin({
-        info: {
-          mode: ENABLE_STATS ? 'test' : 'none',
-          level: ENABLE_STATS ? 'debug' : 'error'
-        }
-      })
-    );
-  }
-
   // Ignore all locale files of moment.js
   plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));
 
   if (ENABLE_DEBUGGING) {
-    plugins.push(new Visualizer());
+    // plugins.push(new Visualizer());
     plugins.push(new StatsWriterPlugin({
       filename: "stats.json",
       stats: {
@@ -116,7 +104,6 @@ function optimization() {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        cache: ENABLE_CACHING,
         parallel: IS_LOCAL, // https://github.com/webpack-contrib/terser-webpack-plugin#parallel
         terserOptions: {
           mangle: false, // need to disable for graphql
