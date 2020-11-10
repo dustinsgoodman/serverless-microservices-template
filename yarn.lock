@@ -9365,6 +9365,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"graphql@npm:^15.4.0":
+  version: 15.4.0
+  resolution: "graphql@npm:15.4.0"
+  checksum: 1a307dcfe2646e1e8323d03e8cd24554ba9f7369863bf0b020f2e4b39bff3504dc7d6dcad19cb96899f0825eda4c688819911f0c270e84f1bb0954fe3ac16a31
+  languageName: node
+  linkType: hard
+
 "growly@npm:^1.3.0":
   version: 1.3.0
   resolution: "growly@npm:1.3.0"
@@ -15294,7 +15301,7 @@ resolve@^1.18.1:
     eslint-plugin-import: ^2.22.1
     eslint-plugin-jest: ^24.1.0
     eslint-plugin-prettier: ^3.1.4
-    graphql: ^15.3.0
+    graphql: ^15.4.0
     graphql-schema-linter: ^1.0.1
     hard-source-webpack-plugin: ^0.13.1
     husky: ^4.3.0
