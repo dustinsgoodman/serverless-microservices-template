@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "apollo-server-lambda": "^2.18.2",
+    "apollo-server-lambda": "^2.19.0",
     "aws-sdk": "^2.758.0",
     "graphql": "^15.4.0",
     "lodash": "^4.17.20",
