@@ -7107,10 +7107,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-expand@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "dotenv-expand@npm:5.1.0"
-  checksum: b895c6220d345db8f58dca439d3bc65c2ee538659df570ed3fa8c99487df854afd6d1ddadf1e43a4091c9ed6166956e7db7bc5a05cf48fa812c0772e1f5cf860
+"dotenv-expand@npm:^4.0.1":
+  version: 4.2.0
+  resolution: "dotenv-expand@npm:4.2.0"
+  checksum: 6441a9648cb4bb315b050b06624cf87e23becd694ed7cd553f88d68a88c48975517d3909488e9761369a3859a3c60f96fa48b96d7c1bc78cbfb5b0214843ae03
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "dotenv@npm:4.0.0"
+  checksum: ca343506e4ddcaf31c12dd4501e6acf5308a164ad7956d1c74a0ab665c5c2c6ea1b8ecaf5fbaf72b3a4ef425a4936d428158fc9ab90c00a83e3714d719f995d0
   languageName: node
   linkType: hard
 
@@ -14952,14 +14959,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"serverless-dotenv-plugin@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "serverless-dotenv-plugin@npm:3.0.0"
+"serverless-dotenv-plugin@npm:1.1.5":
+  version: 1.1.5
+  resolution: "serverless-dotenv-plugin@npm:1.1.5"
   dependencies:
-    chalk: ^4.1.0
-    dotenv: ^8.2.0
-    dotenv-expand: ^5.1.0
-  checksum: f5b8a20d057c81450e28311cd245fb82e9a8175dc4ff8a9aba2e627a5b2d99744a74cd6e1ca9c4f3a548710cc53921dcdb28699edf61a72866fe490a47e8ccb9
+    chalk: ^2.1.0
+    dotenv: ^4.0.0
+    dotenv-expand: ^4.0.1
+  checksum: cd2800362e5fcc0af5bdf40608422aacc45f1af3f5418e8e27f843904806cb289099893879170d6fd703a22e7dd0d3470fd6223eba86f21ac1f140fdd4ebf03b
   languageName: node
   linkType: hard
 
@@ -15062,7 +15069,7 @@ fsevents@^1.2.7:
     prettier: ^2.1.2
     prettier-eslint: ^11.0.0
     serverless: ^2.11.1
-    serverless-dotenv-plugin: ^3.0.0
+    serverless-dotenv-plugin: 1.1.5
     serverless-offline: ^6.8.0
     serverless-plugin-warmup: ^4.9.0
     serverless-s3-remover: ^0.6.0
