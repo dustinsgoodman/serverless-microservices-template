@@ -34,7 +34,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-private-methods": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.1",
     "@serverless/eslint-config": "^3.0.0",
     "apollo": "^2.31.1",
