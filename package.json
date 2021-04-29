@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/register": "^7.12.1",
     "@serverless/eslint-config": "^3.0.0",
-    "apollo": "^2.31.1",
+    "apollo": "^2.32.10",
     "apollo-server-testing": "^2.19.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.2",
