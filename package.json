@@ -24,7 +24,7 @@
     "aws-sdk": "^2.758.0",
     "graphql": "^15.4.0",
     "lodash": "^4.17.20",
-    "serverless": "^2.11.1",
+    "serverless": "^2.38.0",
     "serverless-plugin-warmup": "^4.9.0",
     "serverless-s3-remover": "^0.6.0"
   },
