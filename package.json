@@ -15,9 +15,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "workspaces": [
-    "services/*"
-  ],
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "apollo-server-lambda": "^2.19.0",
