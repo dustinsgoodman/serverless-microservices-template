@@ -7,7 +7,7 @@ const Visualizer = require('webpack-visualizer-plugin2');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
 const aliases = require('./aliases');
 
-const ENABLE_DEBUGGING = true;
+const ENABLE_DEBUGGING = false;
 const IS_LOCAL = ENABLE_DEBUGGING ? false : slsw.lib.webpack.isLocal;
 const servicePath = slsw.lib.serverless && slsw.lib.serverless.config && slsw.lib.serverless.config.servicePath || '';
 
