@@ -44,5 +44,6 @@ custom:
       forceInclude: ~
       packagePath: ../../package.json
       nodeModulesRelativeDir: '../../'
+    keepOutputDirectory: true # uncomment if debugging
     packager: npm
     webpackConfig: ../../webpack.config.js
