@@ -43,5 +43,6 @@ custom:
         - aws-sdk
       forceInclude: ~
       packagePath: ../../package.json
+      nodeModulesRelativeDir: '../../'
     packager: npm
     webpackConfig: ../../webpack.config.js

@@ -63,7 +63,7 @@
     "serverless-dotenv-plugin": "1.1.5",
     "serverless-offline": "^7.0.0",
     "serverless-s3-remover": "^0.6.0",
-    "serverless-webpack": "^5.3.5",
+    "serverless-webpack": "^5.5.0",
     "terser-webpack-plugin": "^4.2.2",
     "timekeeper": "^2.2.0",
     "webpack": "^4.44.2",
