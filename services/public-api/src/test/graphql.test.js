@@ -1,4 +1,4 @@
-import { graphqlHandler } from '../src/handlers/graphql';
+import { graphqlHandler } from '../handlers/graphql';
 
 describe('apollo server', () => {
   test('returns graphql server handler', () => {

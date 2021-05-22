@@ -2,7 +2,7 @@ import { Lambda } from 'API/AWSApi';
 import { downcaseKeys } from 'Utils/ObjectUtils';
 
 const PORTS = {
-  'graphql-api': 3002,
+  'public-api': 3002,
 };
 
 /**

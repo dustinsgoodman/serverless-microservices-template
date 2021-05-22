@@ -1,12 +1,12 @@
 custom:
-  profile: serverless-template # use your project aws prefix here
+  profile: serverless-template
   region: ${opt:region, self:provider.region}
 
   dotenv:
     path: ../../.env.development
 
   ports:
-    graphql-api:
+    public-api:
       httpPort: 3000
       lambdaPort: 3002
 

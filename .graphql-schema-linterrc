@@ -15,12 +15,6 @@
     "types-are-capitalized",
     "types-have-descriptions",
   ],
-  "ignore": {
-    "enum-values-have-descriptions": [],
-    "enum-values-sorted-alphabetically": [],
-    "fields-are-camel-cased": ["Query._", "Mutation._", "Subscription._"],
-    "types-have-descriptions": [],
-  },
   "schemaPaths": [
     "services/graphql-api/schema/schema.graphql"
   ]

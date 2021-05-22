@@ -1,8 +1,4 @@
-service: graphql-api
-# app and org for use with dashboard.serverless.com
-# omit if you're not usling serverless.com
-# app: serverless-template
-# org: plsharocko
+service: public-api
 plugins:
   - serverless-dotenv-plugin
   - serverless-s3-remover

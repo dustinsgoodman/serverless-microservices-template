@@ -32,25 +32,8 @@ directive @connection(
   filter: [String!]
 ) on FIELD
 
-"""Collections of mutations for schema"""
-type Mutation {
-  """Empty mutation type to serve as a parent for all other mutations"""
-  _: String
-}
-
 """Collections of queries for schema"""
 type Query {
-  """Empty query type to serve as a parent for all other queries"""
-  _: String
-
   """Hello World example query for testing"""
   hello: String
-}
-
-"""Collections of subscriptions for schema"""
-type Subscription {
-  """
-  Empty subscription type to serve as a parent for all other subscriptions
-  """
-  _: String
 }
