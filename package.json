@@ -60,7 +60,7 @@
     "lint-staged": "^10.5.1",
     "nock": "^13.0.4",
     "prettier": "^2.1.2",
-    "prettier-eslint": "^11.0.0",
+    "prettier-eslint": "^12.0.0",
     "serverless-dotenv-plugin": "1.1.5",
     "serverless-offline": "^6.8.0",
     "serverless-webpack": "^5.3.5",
