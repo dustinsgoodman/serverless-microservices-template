@@ -21,11 +21,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install modules
-      run: yarn
+      run: npm i
     - name: Run ESLint
-      run: yarn lint:ci
+      run: npm run lint:ci
     - name: Run tests
-      run: yarn test:ci
+      run: npm run test:ci
       env:
         IS_OFFLINE: true
         SLS_STAGE: test

@@ -8,16 +8,6 @@ launch.json
 
 # package directories
 node_modules
-jspm_packages
-package-lock.json
-
-# yarn - no zero-installs
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
 
 # Secrets
 .env

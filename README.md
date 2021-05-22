@@ -3,7 +3,6 @@ This is a [Serverless](serverless.com) backend application template for usage ac
 
 ## Requirements
 * Node 12.18.2
-* [yarn](https://yarnpkg.com/) 2.x+
 * [Serverless CLI](https://www.serverless.com/framework/docs/getting-started/)
 
 ## Setup
@@ -16,23 +15,23 @@ cp .env.test.example .env.test
 ```
 
 ## Useful Commands
-`yarn console`
+`npm run console`
 Launches an interactive repl for testing your code.
 
-`yarn lint`
+`npm run lint`
 Project configured `eslint` command. Accepts all CLI options from eslint. Must specify file to act upon.
 
-`yarn lint:ci`
+`npm run lint:ci`
 Runs linting against entire project in error-only mode.
 
-`yarn lint:errors`
+`npm run lint:errors`
 Runs linting in error-only mode. Must specify file to act upon.
 
-`yarn test`
+`npm run test`
 Runs jest test suite. All jest CLI options are available.
 
-`yarn test:ci`
+`npm run test:ci`
 Runs full jest test suite in CI mode. All tests are run sequentially.
 
-`yarn test:debug`
+`npm run test:debug`
 Run tests in debuggable mode for your editor.
