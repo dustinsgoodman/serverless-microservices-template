@@ -42,5 +42,5 @@ custom:
         - aws-sdk
       forceInclude: ~
       packagePath: ../../package.json
-    packager: yarn
+    packager: npm
     webpackConfig: ../../webpack.config.js
