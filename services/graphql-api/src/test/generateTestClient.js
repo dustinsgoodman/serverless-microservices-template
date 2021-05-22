@@ -1,9 +1,8 @@
 import { ApolloServer } from 'apollo-server-lambda';
 import { createTestClient } from 'apollo-server-testing';
-import { merge } from 'Utils/ObjectUtils';
-import { typeDefs } from '../src/typeDefs';
-import { resolvers } from '../src/resolvers';
-import { schemaDirectives } from '../src/schemaDirectives';
+import { mergeTypeDefs, mergeResolvers } from 'graphql-tools';
+import { typeDefs, resolvers } from '../types';
+import { schemaDirectives } from '../schemaDirectives';
 
 const serverConfig = {
   schemaDirectives,
@@ -14,8 +13,8 @@ const generateTestClient = (context, { extraTypeDefs = [], extraResolvers = [] }
   return createTestClient(
     new ApolloServer({
       ...serverConfig,
-      typeDefs: [...typeDefs, ...extraTypeDefs],
-      resolvers: merge(resolvers, ...extraResolvers),
+      typeDefs: mergeTypeDefs([typeDefs, extraTypeDefs]),
+      resolvers: mergeResolvers([resolvers, extraResolvers]),
     })
   );
 };

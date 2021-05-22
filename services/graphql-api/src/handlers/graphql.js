@@ -3,8 +3,7 @@ import { lexicographicSortSchema } from 'graphql';
 
 import { isProduction } from 'Helpers/ContextHelper';
 
-import { typeDefs } from '../typeDefs';
-import { resolvers } from '../resolvers';
+import { typeDefs, resolvers } from '../types';
 import { schemaDirectives } from '../schemaDirectives';
 
 const isProd = isProduction();

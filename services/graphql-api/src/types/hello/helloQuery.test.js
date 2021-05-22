@@ -1,5 +1,5 @@
 import { gql } from 'apollo-server-lambda';
-import generateTestClient from '../generateTestClient';
+import generateTestClient from '../../test/generateTestClient';
 
 describe('hello Query', () => {
   let subject;

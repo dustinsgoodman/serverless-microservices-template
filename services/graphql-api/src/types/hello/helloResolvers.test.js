@@ -1,10 +1,10 @@
-import { hello } from '../../src/resolvers/hello';
+import helloResolvers from './helloResolvers';
 
-describe('.hello', () => {
+describe('Query.hello', () => {
   let subject;
 
   beforeAll(async () => {
-    subject = await hello();
+    subject = await helloResolvers.Query.hello();
   });
 
   test('returns Hello World string', () => {
