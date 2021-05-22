@@ -66,7 +66,7 @@
     "serverless-webpack": "^5.5.0",
     "terser-webpack-plugin": "^4.2.2",
     "timekeeper": "^2.2.0",
-    "webpack": "^4.44.2",
+    "webpack": "^5.37.1",
     "webpack-node-externals": "^3.0.0",
     "webpack-stats-plugin": "^1.0.2",
     "webpack-visualizer-plugin": "^0.1.11"
