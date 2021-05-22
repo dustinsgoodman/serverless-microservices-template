@@ -2,9 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const slsw = require('serverless-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
-const Visualizer = require('webpack-visualizer-plugin');
+const Visualizer = require('webpack-visualizer-plugin2');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
 const aliases = require('./aliases');
 
@@ -42,19 +41,8 @@ function babelLoader() {
       cacheDirectory: ENABLE_CACHING,
       // Disable compressing cache files to speed up caching
       cacheCompression: false,
-      plugins: plugins.map(require.resolve),
-      presets: [
-        [
-          require.resolve('@babel/preset-env'),
-          {
-            targets: {
-              node: '12.18.2'
-            },
-            useBuiltIns: 'usage',
-            corejs: 3
-          }
-        ]
-      ]
+      plugins: plugins,
+      presets: ['@babel/preset-env'],
     }
   };
 }
@@ -82,28 +70,14 @@ function loaders() {
 function plugins() {
   const plugins = [];
 
-  if (ENABLE_CACHING) {
-    plugins.push(
-      new HardSourceWebpackPlugin({
-        info: {
-          mode: ENABLE_STATS ? 'test' : 'none',
-          level: ENABLE_STATS ? 'debug' : 'error'
-        }
-      })
-    );
-  }
-
-  // Ignore all locale files of moment.js
-  plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));
-
   if (ENABLE_DEBUGGING) {
-    plugins.push(new Visualizer());
     plugins.push(new StatsWriterPlugin({
       filename: "stats.json",
       stats: {
         all: true
       }
     }));
+    plugins.push(new Visualizer());
   }
 
 
@@ -116,7 +90,6 @@ function optimization() {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        cache: ENABLE_CACHING,
         parallel: IS_LOCAL, // https://github.com/webpack-contrib/terser-webpack-plugin#parallel
         terserOptions: {
           mangle: false, // need to disable for graphql
@@ -133,7 +106,6 @@ function optimization() {
   if (IS_LOCAL) {
     optimizationConfig.removeEmptyChunks = false;
     optimizationConfig.removeAvailableModules = false;
-    optimizationConfig.splitChunks = false;
   }
 
   return optimizationConfig;
@@ -142,6 +114,7 @@ function optimization() {
 module.exports = {
   entry: entries(),
   target: 'node',
+  externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc.
   context: path.resolve(__dirname),
   // Verbose Logging
   stats: ENABLE_STATS ? (ENABLE_DEBUGGING ? 'verbose' : 'normal') : 'errors-only',
@@ -152,13 +125,16 @@ module.exports = {
   mode: IS_LOCAL ? 'development' : 'production',
   performance: {
     // Turn off size warnings for entry points
-    hints: false
+    hints: false,
   },
   resolve: {
     // Performance
     symlinks: false,
     // import aliases
-    alias: aliases,
+    alias: {
+      ...aliases,
+      graphql$: path.resolve(__dirname, 'node_modules/graphql/index.js'),
+    },
     // We don't package services individually so only look
     // inside the project's node_modules
     modules: ['node_modules'],
@@ -168,6 +144,6 @@ module.exports = {
   optimization: optimization(),
   plugins: plugins(),
   node: {
-    __dirname: false
+    __dirname: false,
   }
 };
