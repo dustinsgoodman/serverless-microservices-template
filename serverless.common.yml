@@ -30,10 +30,11 @@ custom:
       SLS_STAGE: local
 
   warmup:
-    enabled: false
-    events:
-      - schedule: 'rate(10 minutes)'
-    prewarm: true
+    default:
+      enabled: false
+      events:
+        - schedule: 'rate(10 minutes)'
+      prewarm: true
 
   webpack:
     excludeFiles: ./**/*.test.js
