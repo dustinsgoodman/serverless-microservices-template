@@ -1,5 +1,5 @@
 export default {
   Query: {
-    hello: async () => 'Hello World',
+    hello: async () => 'Hello World!',
   },
 };
