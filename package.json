@@ -21,13 +21,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
+    "@graphql-tools/merge": "^6.2.14",
     "apollo-server-lambda": "^2.24.1",
     "aws-sdk": "^2.758.0",
     "graphql": "^15.5.0",
-    "graphql-tools": "^7.0.5",
-    "serverless": "^2.11.1",
-    "serverless-plugin-warmup": "^4.9.0",
-    "serverless-s3-remover": "^0.6.0"
+    "serverless": "^2.43.0",
+    "serverless-plugin-warmup": "^5.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -62,12 +61,13 @@
     "prettier": "^2.1.2",
     "prettier-eslint": "^12.0.0",
     "serverless-dotenv-plugin": "1.1.5",
-    "serverless-offline": "^6.8.0",
-    "serverless-webpack": "^5.3.5",
+    "serverless-offline": "^7.0.0",
+    "serverless-s3-remover": "^0.6.0",
+    "serverless-webpack": "^5.5.0",
     "terser-webpack-plugin": "^4.2.2",
     "timekeeper": "^2.2.0",
     "webpack": "^4.44.2",
-    "webpack-node-externals": "^2.5.2",
+    "webpack-node-externals": "^3.0.0",
     "webpack-stats-plugin": "^1.0.2",
     "webpack-visualizer-plugin": "^0.1.11"
   }

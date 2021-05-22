@@ -9,8 +9,8 @@ custom: ${file(../../serverless.common.yml):custom}
 
 package:
   individually: true
-  exclude:
-    - ./**
+  patterns:
+    - '!./**'
 
 provider:
   name: aws
@@ -19,14 +19,17 @@ provider:
   runtime: nodejs12.x
   profile: ${self:custom.profile}-${self:custom.stage_env.${self:provider.stage}.PROFILE, 'dev'}
   environment: ${self:custom.stage_env.${self:provider.stage}}
+  lambdaHashingVersion: 20201221
   tracing:
     apiGateway: true
     lambda: true
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - lambda:InvokeFunction
-      Resource: '*'
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - lambda:InvokeFunction
+          Resource: '*'
 
 functions:
   graphql:

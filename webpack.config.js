@@ -148,7 +148,7 @@ module.exports = {
   devtool: ENABLE_SOURCE_MAPS ? 'source-map' : false,
   // Exclude aws-sdk b/c it's a built-in on lambda and nodeExternals b/c
   // we're in a node runtime and not on the browser
-  externals: ['aws-sdk', nodeExternals()],
+  externals: ['aws-sdk', 'bufferutil', 'utf-8-validate', nodeExternals()],
   mode: IS_LOCAL ? 'development' : 'production',
   performance: {
     // Turn off size warnings for entry points
