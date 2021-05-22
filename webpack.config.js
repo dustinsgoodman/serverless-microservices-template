@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const slsw = require('serverless-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
-// const Visualizer = require('webpack-visualizer-plugin');
+const Visualizer = require('webpack-visualizer-plugin2');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
 const aliases = require('./aliases');
 
@@ -79,15 +79,14 @@ function plugins() {
   );
 
   if (ENABLE_DEBUGGING) {
-    // plugins.push(new Visualizer());
     plugins.push(new StatsWriterPlugin({
       filename: "stats.json",
       stats: {
         all: true
       }
     }));
+    plugins.push(new Visualizer());
   }
-
 
   return plugins;
 }
