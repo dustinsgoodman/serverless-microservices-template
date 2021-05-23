@@ -54,10 +54,7 @@ function tsLoader() {
   return {
     loader: "ts-loader",
     options: {
-      projectReferences: true,
       configFile: tsconfigPath,
-      experimentalWatchApi: true,
-      transpileOnly: false
     }
   };
 }
