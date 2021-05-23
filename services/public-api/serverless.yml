@@ -2,7 +2,6 @@ service: public-api
 plugins:
   - serverless-dotenv-plugin
   - serverless-s3-remover
-  - serverless-plugin-typescript
   - serverless-webpack
   - serverless-offline
 
