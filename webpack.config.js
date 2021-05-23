@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const slsw = require('serverless-webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const Visualizer = require('webpack-visualizer-plugin2');
@@ -47,6 +48,18 @@ function babelLoader() {
   };
 }
 
+function tsLoader() {
+  return {
+    loader: "ts-loader",
+    options: {
+      projectReferences: true,
+      configFile: path.resolve(servicePath, "../../tsconfig.json"),
+      experimentalWatchApi: true,
+      transpileOnly: false
+    }
+  };
+}
+
 function loaders() {
   const loaders = {
     rules: [
@@ -55,6 +68,18 @@ function loaders() {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [babelLoader()]
+      },
+      // process TS files
+      {
+        test: /\.ts$/,
+        exclude: [
+          [
+            path.resolve(servicePath, "node_modules"),
+            path.resolve(servicePath, ".serverless"),
+            path.resolve(servicePath, ".webpack")
+          ]
+        ],
+        use: [babelLoader(), tsLoader()]
       },
       // removed css related loaders b/c we don't use them here _yet_
       // ignore image files
@@ -68,7 +93,12 @@ function loaders() {
 }
 
 function plugins() {
-  const plugins = [];
+  const plugins = [
+    new ESLintPlugin({
+      extensions: ['js', 'ts'],
+      files: ['src/**/*', 'services/**/*']
+    })
+  ];
 
   if (ENABLE_DEBUGGING) {
     plugins.push(new StatsWriterPlugin({
