@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const slsw = require('serverless-webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const Visualizer = require('webpack-visualizer-plugin2');
@@ -10,6 +12,7 @@ const aliases = require('./aliases');
 const ENABLE_DEBUGGING = false;
 const IS_LOCAL = ENABLE_DEBUGGING ? false : slsw.lib.webpack.isLocal;
 const servicePath = slsw.lib.serverless && slsw.lib.serverless.config && slsw.lib.serverless.config.servicePath || '';
+const tsconfigPath = path.resolve(servicePath, "../../tsconfig.json");
 
 // configurable settings
 const ENABLE_STATS = ENABLE_DEBUGGING || IS_LOCAL; // only want stats locally
@@ -47,14 +50,23 @@ function babelLoader() {
   };
 }
 
+function tsLoader() {
+  return {
+    loader: "ts-loader",
+    options: {
+      configFile: tsconfigPath,
+    }
+  };
+}
+
 function loaders() {
   const loaders = {
     rules: [
-      // process JS files
+      // process JS/TS files
       {
-        test: /\.js$/,
+        test: /\.(ts|js)$/,
         exclude: /node_modules/,
-        use: [babelLoader()]
+        use: [babelLoader(), tsLoader()]
       },
       // removed css related loaders b/c we don't use them here _yet_
       // ignore image files
@@ -68,7 +80,12 @@ function loaders() {
 }
 
 function plugins() {
-  const plugins = [];
+  const plugins = [
+    new ESLintPlugin({
+      extensions: ['js', 'ts'],
+      files: ['src/**/*', 'services/**/*']
+    }),
+  ];
 
   if (ENABLE_DEBUGGING) {
     plugins.push(new StatsWriterPlugin({
@@ -135,9 +152,19 @@ module.exports = {
       ...aliases,
       graphql$: path.resolve(__dirname, 'node_modules/graphql/index.js'),
     },
+    extensions: ['.js', '.json', '.ts'],
     // We don't package services individually so only look
     // inside the project's node_modules
     modules: ['node_modules'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: tsconfigPath
+      })
+    ],
+  },
+  output: {
+    path: path.join(servicePath, '.webpack'),
+    filename: '[name].js'
   },
   module: loaders(),
   // PERFORMANCE ONLY FOR DEVELOPMENT
