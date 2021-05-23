@@ -1,7 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    // "target": "es6",
+    // "moduleResolution": "node",
+    // "baseUrl": "."
+    "baseUrl": ".",
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "sourceRoot": "/",
+    "target": "es2017",
+    "outDir": ".build",
     "moduleResolution": "node",
-    "baseUrl": "."
+    "esModuleInterop": true,
+    "lib": ["es2017"],
+    "resolveJsonModule": true
   }
 }
