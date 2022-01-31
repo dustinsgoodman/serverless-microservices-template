@@ -6,20 +6,20 @@
 .vscode
 launch.json
 
-# package directories
+# packaging
+package-lock.json
 node_modules
 
 # Secrets
 .env
-.env.test
-.env.development
-.env.staging
-.env.production
+.env.*
+!.env.*.example
 
 # Serverless directories
 .serverless
 .eslintcache
 .webpack
+.esbuild
 
 #AWS
 .aws
