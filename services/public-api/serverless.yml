@@ -5,6 +5,8 @@ plugins:
   - serverless-webpack
   - serverless-offline
 
+frameworkVersion: '3'
+
 custom: ${file(../../serverless.common.yml):custom}
 
 package:
@@ -16,7 +18,7 @@ provider:
   name: aws
   stage: ${opt:stage, "local"}
   region: ${opt:region, "us-east-1"}
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   profile: ${self:custom.profile}-${self:custom.stage_env.${self:provider.stage}.PROFILE, 'dev'}
   environment: ${self:custom.stage_env.${self:provider.stage}}
   lambdaHashingVersion: 20201221
