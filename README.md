@@ -8,9 +8,10 @@ This project is intended to be a quick start for the [Serverless Framework](serv
 - Jest
 
 ## Requirements
-* node 12.18.2
-* npm 6.14.5
-* [Serverless CLI](https://www.serverless.com/framework/docs/getting-started/)
+
+- node 14.16.0
+- npm 7.12.0
+- [Serverless CLI v3](https://www.serverless.com/framework/docs/getting-started/)
 
 ## Setup
 
@@ -20,8 +21,9 @@ This project is intended to be a quick start for the [Serverless Framework](serv
 4. Configure profile, region, and other serverless values in `serverless.common.yml`. See [docs](https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml/) for configuration
 
 ### Clone dotenv files
+
 ```
-cp .env.development.example .env.development
+cp .env.dev.example .env.dev
 cp .env.test.example .env.test
 ```
 
@@ -41,6 +43,7 @@ cp .env.test.example .env.test
 4. Add your service to the ports list in `serverless.common.yml` and `invoke.js`
 
 Example:
+
 ```
 cd services
 mkdir user-api
@@ -58,6 +61,7 @@ cp ../public-api/serverless.yml ./serverless.yml
 3. Add your handler file
 
 ## Useful Commands
+
 `npm run console`
 Launches an interactive repl for testing your code. If you're familiar with Ruby on Rails, this is similar to the Rails' console.
 
