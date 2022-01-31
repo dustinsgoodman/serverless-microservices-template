@@ -1,11 +1,10 @@
 service: public-api
 plugins:
-  - serverless-dotenv-plugin
   - serverless-s3-remover
-  - serverless-webpack
+  - serverless-esbuild
   - serverless-offline
-
 frameworkVersion: '3'
+useDotenv: true
 
 custom: ${file(../../serverless.common.yml):custom}
 
@@ -14,14 +13,17 @@ package:
   patterns:
     - '!./**'
 
+params:
+  dev:
+    SLS_DEBUG: '*'
+    IS_OFFLINE: ${env:IS_OFFLINE, false}
+    PROFILE: dev
+
 provider:
   name: aws
-  stage: ${opt:stage, "local"}
+  stage: ${opt:stage, "dev"}
   region: ${opt:region, "us-east-1"}
   runtime: nodejs14.x
-  profile: ${self:custom.profile}-${self:custom.stage_env.${self:provider.stage}.PROFILE, 'dev'}
-  environment: ${self:custom.stage_env.${self:provider.stage}}
-  lambdaHashingVersion: 20201221
   tracing:
     apiGateway: true
     lambda: true
