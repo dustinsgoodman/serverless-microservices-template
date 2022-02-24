@@ -1,80 +1,44 @@
-# Serverless Template
+# Serverless Microservices Demo
 
-This project is intended to be a quick start for the [Serverless Framework](serverless.com). It is intended to act as a microservices architecture with a public facing GraphQL API. This template employs the following libraries:
+This application serves as a demonstration of how one might architect an enterprise level application using the Serverless Framework. It provides the following services out of the box:
 
-- Apollo GraphQL
-- Webpack 5
-- TypeScriprt (Coming Soon)
-- Jest
+- [Public API](./services/public-api): Provides a GraphQL API and other endpoints for public interactions.
+- [Background Jobs](./services/background-jobs): Handles background processing based jobs.
 
-## Requirements
-* node 12.18.2
-* npm 6.14.5
-* [Serverless CLI](https://www.serverless.com/framework/docs/getting-started/)
+## Technologies Used
 
-## Setup
+- Serverless Framework v3
+- ESBuild - Fast, light-weight bundler
+- TypeScript
 
-1. Clone the repo
-2. `npm i`
-3. Generate dotenv files
-4. Configure profile, region, and other serverless values in `serverless.common.yml`. See [docs](https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml/) for configuration
+## Serverless Things
 
-### Clone dotenv files
+### Running Locally
+
+We use the [`serverless-offline`](https://github.com/dherault/serverless-offline) package to allow you to develop your application locally. To run a particular service, `cd` into that directory and run the `sls offline` command. Your terminal will tell you what port you're running on. If you're adding a new service, you'll need to configure its ports in the [`serverless.common.yml`](./serverless.common.yml). This is so all port configurations are hosted in one place to avoid runtime conflicts for port 3000. Here's the current port lookup table:
+
+| Service    | HTTP Port | Lambda Port |
+| ---------- | --------- | ----------- |
+| Public API | 3000      | 3002        |
+
+### Deploying
+
+`cd` into the directory of the service you want to deploy and run:
+
 ```
-cp .env.development.example .env.development
-cp .env.test.example .env.test
-```
-
-## Getting Started
-
-### Running a service
-
-1. `cd services/<service>`, e.g. `cd services/public-api`
-2. `sls offline`
-3. Connect to the URL provided in the output
-
-### Creating a new service
-
-1. Create new directory in `services`
-2. Generate new `serverless.yml` in your new service's directory
-3. Modify your `serverless.yml` to reflect your service's API
-4. Add your service to the ports list in `serverless.common.yml` and `invoke.js`
-
-Example:
-```
-cd services
-mkdir user-api
-cd user-api
-cp ../public-api/serverless.yml ./serverless.yml
-# edit serverless.yml
-# edit serverless.common.yml
-# edit invoke.js
+$ serverless deploy
 ```
 
-### Extending an existing service
+After deploying, you should see output similar to:
 
-1. Open `serverless.yml` in your service's directory
-2. Add a new function to the yml
-3. Add your handler file
+```bash
+Deploying public-api to stage dev (us-east-1)
 
-## Useful Commands
-`npm run console`
-Launches an interactive repl for testing your code. If you're familiar with Ruby on Rails, this is similar to the Rails' console.
+✔ Service deployed to stack public-api-dev (152s)
 
-`npm run lint`
-Project configured `eslint` command. Accepts all CLI options from eslint. Must specify file to act upon.
+endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
+functions:
+  healthcheck: public-api-dev-healthcheck (1.9 kB)
+```
 
-`npm run lint:ci`
-Runs linting against entire project in error-only mode.
-
-`npm run lint:errors`
-Runs linting in error-only mode. Must specify file to act upon.
-
-`npm run test`
-Runs jest test suite. All jest CLI options are available.
-
-`npm run test:ci`
-Runs full jest test suite in CI mode. All tests are run sequentially.
-
-`npm run test:debug`
-Run tests in debuggable mode for your editor.
+_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [http event docs](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/).
