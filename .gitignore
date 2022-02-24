@@ -1,31 +1,6 @@
-.DS_Store
-
-#IDE
-.idea
-.vs_code
-.vscode
-launch.json
-
 # package directories
 node_modules
 
-# Secrets
-.env
-.env.test
-.env.development
-.env.staging
-.env.production
-
 # Serverless directories
 .serverless
-.eslintcache
-.webpack
-
-#AWS
-.aws
-
-# testing
-coverage
-
-# Console
-.node_repl_history
+.esbuild

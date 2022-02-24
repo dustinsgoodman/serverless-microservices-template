@@ -1,4 +1,4 @@
-service: public-api
+service: background-jobs
 plugins:
   - serverless-s3-remover
   - serverless-esbuild
@@ -23,9 +23,9 @@ provider:
   region: ${opt:region, 'us-east-1'}
 
 functions:
-  healthcheck:
-    handler: handler.healthcheck
-    events:
-      - httpApi:
-          path: /healthcheck
-          method: get
+  # healthcheck:
+  #   handler: handler.healthcheck
+  #   events:
+  #     - httpApi:
+  #         path: /healthcheck
+  #         method: get
