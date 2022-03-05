@@ -1,4 +1,6 @@
-# Serverless Template
+After attempting to upgrade this template, many of the changes proved difficult to accomplish given the current setup. Additionally, some of the core scripts and features of this template would not work without relying upon global system settings which defeats the intent of this effort. After doing some research and playing with other tooling, I decided a monorepos solution was needed and landed on using nx. Rather than continuing with this repo, I decided to start fresh in https://github.com/dustinsgoodman/serverless-microservices-graphql-template to preserve the relationship to a forked template. As such, I'm archiving this repo and encourage you to check out the new repo.
+
+# ~Serverless Template~ - Deprecated
 
 This project is intended to be a quick start for the [Serverless Framework](serverless.com). It is intended to act as a microservices architecture with a public facing GraphQL API. This template employs the following libraries:
 
